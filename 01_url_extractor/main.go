@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
+	netUrl "net/url"
 	"os"
 
-	"github.com/demidovich/go-learn/02_url_extractor/parser"
+	"github.com/demidovich/go-learn/01_url_extractor/parser"
 	"github.com/demidovich/go-learn/util"
 )
 
@@ -14,7 +15,8 @@ func main() {
 
 	fmt.Println("Request " + targetUrl)
 	html := html(targetUrl)
-	urls := parser.Urls(html, targetUrl)
+	host := hostFromUrl(targetUrl)
+	urls := parser.Urls(html, host)
 
 	printInfo(urls)
 }
@@ -47,4 +49,12 @@ func targetUrl() string {
 	}
 
 	return value
+}
+
+func hostFromUrl(url string) string {
+	u, err := netUrl.Parse(url)
+	if err != nil || u.Scheme == "" || u.Host == "" {
+		log.Fatal("Error extract Host from targetUrl: " + url)
+	}
+	return u.Scheme + "://" + u.Host
 }

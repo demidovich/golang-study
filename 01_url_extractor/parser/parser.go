@@ -17,10 +17,10 @@ func Urls(html string, host string) []string {
 	results := make([]string, 0, len(matches))
 
 	for _, match := range matches {
-		if isLink(match[1]) {
+		if isNotStaticResource(match[1]) {
 			results = append(
 				results,
-				urlWithHost(match[1], host),
+				absoluteUrl(match[1], host),
 			)
 		}
 	}
@@ -28,7 +28,7 @@ func Urls(html string, host string) []string {
 	return results
 }
 
-func urlWithHost(url string, host string) string {
+func absoluteUrl(url string, host string) string {
 	reg, _ := regexp.Compile(`(?i)^https?\://`)
 	if reg.MatchString(url) {
 		return url
@@ -41,7 +41,7 @@ func urlWithHost(url string, host string) string {
 	return host + "/" + url
 }
 
-func isLink(url string) bool {
+func isNotStaticResource(url string) bool {
 	regJs, _ := regexp.Compile(`(?i)^javascript:`)
 	if regJs.MatchString(url) {
 		return false
