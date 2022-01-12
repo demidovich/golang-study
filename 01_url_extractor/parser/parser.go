@@ -47,6 +47,6 @@ func isNotStaticResource(url string) bool {
 		return false
 	}
 
-	regLink, _ := regexp.Compile(`^(.+/)?[^.]+(\.(php|htm?l|asp))?(\?.*)?$`)
+	regLink, _ := regexp.Compile(`^(.+/)?[^.]+(\.(php|html?|asp))?(\?.*)?$`)
 	return regLink.MatchString(url)
 }
