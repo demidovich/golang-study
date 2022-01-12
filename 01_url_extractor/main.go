@@ -6,8 +6,8 @@ import (
 	netUrl "net/url"
 	"os"
 
-	"github.com/demidovich/go-learn/01_url_extractor/parser"
-	"github.com/demidovich/go-learn/util"
+	"github.com/demidovich/golang-study/01_url_extractor/parser"
+	"github.com/demidovich/golang-study/util"
 )
 
 func main() {
