@@ -3,5 +3,5 @@
 Утилита парсинга href по переданному url. Пропускает ссылки на статику. Преобразует относительные пути в абсолютные.
 
 ```
-go run main.go https://yandex.ru
+go run url_extractor.go https://yandex.ru
 ```
