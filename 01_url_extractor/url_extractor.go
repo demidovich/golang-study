@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/demidovich/golang-study/01_url_extractor/parser"
-	"github.com/demidovich/golang-study/util"
+	"github.com/demidovich/golang-study/pkg/util"
 )
 
 func main() {
