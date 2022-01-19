@@ -1,4 +1,4 @@
-module github.com/demidovich/golang-study
+module golang-study
 
 go 1.17
 

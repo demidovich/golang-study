@@ -1,7 +1,8 @@
 package robot
 
 import (
-	"github.com/demidovich/golang-study/02_robots/model"
+	"golang-study/02_robots/model"
+
 	"github.com/google/uuid"
 )
 

@@ -3,7 +3,8 @@ package main
 import (
 	"runtime/debug"
 
-	robot "github.com/demidovich/golang-study/03_error_handling/internal/robot"
+	robot "golang-study/03_error_handling/internal/robot"
+
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )

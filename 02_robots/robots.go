@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/demidovich/golang-study/02_robots/model"
-	"github.com/demidovich/golang-study/02_robots/robot"
+	"golang-study/02_robots/model"
+	"golang-study/02_robots/robot"
 )
 
 func main() {
