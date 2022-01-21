@@ -17,7 +17,8 @@ func (s *RobotService) NewRobot(name string) (Robot, error) {
 		uuid: uuid.Must(uuid.NewRandom()).String(),
 		name: name,
 	}
-	return item, s.repository.Add(item)
+	error := s.repository.Add(item)
+	return item, error
 }
 
 func (s *RobotService) Rename(item Robot, name string) error {
