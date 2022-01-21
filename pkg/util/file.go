@@ -37,3 +37,14 @@ func ReadFile(filename string, lineSeparator string) ([]string, error) {
 	}
 	return strings.Split(string(raw), lineSeparator), nil
 }
+
+func IsDir(path string) bool {
+	fi, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+	if !fi.Mode().IsDir() {
+		return false
+	}
+	return true
+}
